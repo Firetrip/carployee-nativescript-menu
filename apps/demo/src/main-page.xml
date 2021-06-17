@@ -3,10 +3,6 @@
     <ActionBar title="Plugin Demos" icon="" class="action-bar"/>
   </Page.actionBar>
   <StackLayout class="p-20">
-    <ScrollView class="h-full">
-      <StackLayout>
-        <Button text="add a package first" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
-      </StackLayout>
-    </ScrollView>
+    <Button id="menuBtn" text="MENU" tap="{{ buttonTap }}"/>
   </StackLayout>
 </Page>

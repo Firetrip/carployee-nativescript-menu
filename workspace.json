@@ -86,6 +86,47 @@
 					}
 				}
 			}
+		},
+		"menu": {
+			"projectType": "library",
+			"schematics": {},
+			"root": "packages/menu",
+			"sourceRoot": "packages/menu",
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/menu",
+						"tsConfig": "packages/menu/tsconfig.json",
+						"packageJson": "packages/menu/package.json",
+						"main": "packages/menu/index.ts",
+						"assets": [
+							"packages/menu/*.md",
+							"packages/menu/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/menu/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"options": {
+						"commands": ["nx run menu:build", "node tools/scripts/build-finish.ts menu"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages menu"],
+						"parallel": false
+					}
+				}
+			}
 		}
 	},
 	"cli": {
