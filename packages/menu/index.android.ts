@@ -1,7 +1,6 @@
-import { Application } from '@nativescript/core';
+import { Application, Utils } from '@nativescript/core';
 import { MenuOptions } from '@carployee/menu';
 import { MenuCommon } from './common';
-import * as Types from '@nativescript/core/utils/types';
 
 export class Menu extends MenuCommon {
 	public static popup(options: MenuOptions): Promise<{ id: number; title: string } | string | boolean | any> {
@@ -10,7 +9,7 @@ export class Menu extends MenuCommon {
 				let popupMenu = new android.widget.PopupMenu(Application.android.foregroundActivity, options.view.android);
 
 				if (options.actions[0] !== undefined) {
-					if (Types.isString(options.actions[0])) {
+					if (Utils.isString(options.actions[0])) {
 						for (let i = 0; i < options.actions.length; i++) {
 							const action: any = options.actions[i];
 							popupMenu.getMenu().add(action as any);
