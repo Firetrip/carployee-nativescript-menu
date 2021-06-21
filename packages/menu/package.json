@@ -1,6 +1,6 @@
 {
 	"name": "@carployee/menu",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A fork from https://github.com/xlmnxp/nativescript-menu for NS8",
 	"main": "index",
 	"typings": "index.d.ts",
